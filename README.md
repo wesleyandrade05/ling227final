@@ -14,7 +14,7 @@ The results we obtained and a more complete description of our approach are in t
 
 ### Prepare Data
 
-The code has 4 main python files, which are the ones we used to prepare the data, perform the training and generate the evaluation scores.
+The code has 4 main python files, which are the ones we used to prepare the data, perform the training and generate the evaluation scores. First, we used a [script](https://github.com/euagendas/semeval_8_2022_ia_downloader) provided by the organization that retrieved the information from the url links provided and uploaded json files containing them to a folder.
 
 The first command line to be executed is 
 ```console
@@ -22,6 +22,8 @@ python train_bert.py model
 ```
 
 Here, you specify to which model you want to generate the embeddings and if it is for the training or evaluation dataset. The accepted arguments are *t_multi*, *t_trans*, *e_multi*, *e_trans*, where *e* stands for evaluation, *t* for training, and *trans* for the pre-trained [bert-large-cased](https://huggingface.co/bert-large-cased) model and *multi* for the pre-trained [bert-base-multilingual-cased](https://huggingface.co/bert-base-multilingual-cased) model. However, since running it takes a lot of time (especially for the *trans* model where we have to translate each non-english text using [googletrans](https://pypi.org/project/googletrans/)), we already provided the files containing the embeddings and the required data for the regressor to run. These files are on .pkl format and are called *embedding_eval.pkl*, *embedding_train.pkl*, *translation_embedding_eval.pkl*, *translation_embedding_train.pkl*.
+
+The articles and the files can be found on a [Google Drive folder](https://drive.google.com/drive/folders/1We5Up6zBFChUwJv19QFm1eeCoZfvdtT8?usp=sharing), since they were very large to be uploaded to Github.
 
 <br>
 
